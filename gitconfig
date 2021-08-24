@@ -11,7 +11,7 @@
 
 [core]
   pager = less -FRSX
-	editor = subl -n -w  >/dev/null 2>&1
+  editor = code
 
 [alias]
   co = checkout
@@ -46,6 +46,12 @@
 
 [branch "master"]
   mergeoptions = --no-edit
+<<<<<<< HEAD
 [user]
 	email = 9137502+gtm19@users.noreply.github.com
 	name = Gareth Maddock
+=======
+
+[pull]
+  rebase = false
+>>>>>>> f002b0ebfcae3a567bdbb35dfd1d2d7f68d0c1e9
