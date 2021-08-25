@@ -57,8 +57,8 @@ type -a nvm > /dev/null && load-nvmrc
 # Same for `./node_modules/.bin` and nodejs
 export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 
-# Add ~/.local/bin to path
-export PATH="~/.local/bin:${PATH}"
+# Add ~/.local/bin to path (for Radian mostly)
+export PATH=$PATH:~/.local/bin
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
