@@ -62,7 +62,6 @@
         "**/tmp/**": true,
         "**/vendor/**": true
     },
-    "git.enabled": false,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "[python]":
