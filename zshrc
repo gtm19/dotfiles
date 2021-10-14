@@ -71,3 +71,9 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export BUNDLER_EDITOR=code
+
+# rbenv init
+eval "$(rbenv init -)"
+
+# WSL default browser
+export BROWSER='"/mnt/c/Program Files/Mozilla Firefox/firefox.exe"'
