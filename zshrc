@@ -77,3 +77,4 @@ eval "$(rbenv init -)"
 
 # WSL default browser
 export BROWSER='"/mnt/c/Program Files/Mozilla Firefox/firefox.exe"'
+sudo /etc/init.d/postgresql start
