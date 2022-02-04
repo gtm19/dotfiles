@@ -12,10 +12,14 @@ gemwtf() {
 
 # scans
 fakescan() {
-  source=$1
-  destination=${source%.*}_scanned.pdf
-  convert -density 150 $source -colorspace gray +noise Gaussian -rotate 0.5 -depth 2 $destination
+  for doc in $@
+  do
+    destination=${doc%.*}_scanned.pdf
+    echo "'Scanning' $doc to $destination... "
+    convert -density 150 $doc -colorspace gray +noise Gaussian -rotate 0.5 -depth 2 $destination
+  done
 }
+
 # NOTE: On Q3 2021, Le Wagon decided to change the Web Dev curriculum default text editor
 alias stt="echo 'Launching VS Code instead of Sublime Text... (cf ~/.aliases)' && code ."
 
