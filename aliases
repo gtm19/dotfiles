@@ -4,3 +4,18 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
+
+# Radian / R setup
+alias r="radian"
+
+# Gem WTF
+gemwtf() {
+  open "https://gem.wtf/$1"
+}
+
+# scans
+fakescan() {
+  source=$1
+  destination=${source%.*}_scanned.pdf
+  convert -density 150 $source -colorspace gray +noise Gaussian -rotate 0.5 -depth 2 $destination
+}
