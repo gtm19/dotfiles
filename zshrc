@@ -20,17 +20,12 @@ unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for Linux/WSL
 type -a rbenv > /dev/null && eval "$(rbenv init -)"
 
-<<<<<<< HEAD
 # Load pyenv (To manage your Python versions)
+export PYENV_ROOT="$HOME/.pyenv"
 export PATH="${HOME}/.pyenv/bin:${PATH}" # Needed for Linux/WSL
 if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init --path)"
 fi
-=======
-# Load pyenv (to manage your Python versions)
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-type -a pyenv > /dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && RPROMPT+='[🐍 $(pyenv_prompt_info)]'
->>>>>>> origin/master
 
 # Load nvm (to manage your node versions)
 export NVM_DIR="$HOME/.nvm"
@@ -85,4 +80,3 @@ eval "$(rbenv init -)"
 
 # WSL default browser
 export BROWSER='"/mnt/c/Program Files/Mozilla Firefox/firefox.exe"'
-sudo /etc/init.d/postgresql start
