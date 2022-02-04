@@ -1,12 +1,9 @@
 # Get External IP / Internet Speed
 alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
-alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
 
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
-
-# Radian / R setup
-alias r="radian"
 
 # Gem WTF
 gemwtf() {
@@ -18,4 +15,18 @@ fakescan() {
   source=$1
   destination=${source%.*}_scanned.pdf
   convert -density 150 $source -colorspace gray +noise Gaussian -rotate 0.5 -depth 2 $destination
+}
+# NOTE: On Q3 2021, Le Wagon decided to change the Web Dev curriculum default text editor
+alias stt="echo 'Launching VS Code instead of Sublime Text... (cf ~/.aliases)' && code ."
+
+# Add radian:
+alias r="radian"
+
+# Navigate to Windows documents
+alias mydocs="cd /mnt/c/Documents\ and\ Settings/Gareth.Maddock/Documents"
+
+# Create r package
+new_package () {
+  Rscript -e "if(!require(usethis)) install.packages('usethis')" \
+          -e "usethis::create_package(path = '$1')"
 }

@@ -46,6 +46,7 @@
 
 [branch "master"]
   mergeoptions = --no-edit
+
 [user]
 	email = 9137502+gtm19@users.noreply.github.com
 	name = Gareth Maddock
@@ -53,3 +54,6 @@
 	defaultBranch = main
 [pull]
 	ff = only
+  rebase = false
+[credential]
+	helper = cache
