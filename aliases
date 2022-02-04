@@ -15,8 +15,8 @@ fakescan() {
   for doc in $@
   do
     destination=${doc%.*}_scanned.pdf
-    echo "'Scanning' $doc... "
-    convert -density 150 $source -colorspace gray +noise Gaussian -rotate 0.5 -depth 2 $destination
+    echo "'Scanning' $doc to $destination... "
+    convert -density 150 $doc -colorspace gray +noise Gaussian -rotate 0.5 -depth 2 $destination
   done
 }
 
