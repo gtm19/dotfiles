@@ -34,3 +34,9 @@ new_package () {
   Rscript -e "if(!require(usethis)) install.packages('usethis')" \
           -e "usethis::create_package(path = '$1')"
 }
+
+# Create Golem app
+golem () {
+  Rscript -e "if(!require(golem)) install.packages('golem')" \
+          -e "golem::create_golem(path = '$1')"
+}
