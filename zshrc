@@ -77,6 +77,7 @@ export BUNDLER_EDITOR=code
 eval "$(rbenv init -)"
 
 # WSL default browser
-if wsl -v >> /dev/null 2>&1; then
-  export BROWSER='"/mnt/c/Program Files/Mozilla Firefox/firefox.exe"'
+if ls /mnt/wsl >> /dev/null 2>&1; then
+  # export BROWSER='"/mnt/c/Program Files/Mozilla Firefox/firefox.exe"'
+  export BROWSER='"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"'
 fi
