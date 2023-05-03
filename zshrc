@@ -70,9 +70,6 @@ export PATH=$PATH:~/.local/bin
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
-# Set TZ
-TZ="Europe/London"
-
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
