@@ -4,12 +4,13 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # if pyenv is installed, load it
-if which pyenv > /dev/null
-then
+if [ -d "$HOME/.pyenv" ]; then
+  echo "Loading pyenv"
   export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
 fi
+
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search pyenv)
@@ -25,8 +26,9 @@ source "${ZSH}/oh-my-zsh.sh"
 unalias rm # No interactive rm by default (brought by plugins/common-aliases)
 
 # Load rbenv if installed (to manage your Ruby versions)
-if which rbenv > /dev/null
-then 
+if [ -d "$HOME/.rbenv" ]
+then
+  echo "Loading rbenv"
   export PATH="${HOME}/.rbenv/bin:${PATH}" # Needed for WSL
   type -a rbenv > /dev/null && eval "$(rbenv init -)"
 fi
@@ -72,12 +74,9 @@ export PATH=$PATH:~/.local/bin
 
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
 
 export BUNDLER_EDITOR=code
-
-# if rbenv is installed, initialise it
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # WSL default browser
 if ls /mnt/wsl >> /dev/null 2>&1; then
