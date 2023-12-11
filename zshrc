@@ -83,3 +83,6 @@ if ls /mnt/wsl >> /dev/null 2>&1; then
   # export BROWSER='"/mnt/c/Program Files/Mozilla Firefox/firefox.exe"'
   export BROWSER='"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"'
 fi
+
+# Add homebrew to path
+export PATH=$PATH:/opt/homebrew/bin
