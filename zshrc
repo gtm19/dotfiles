@@ -4,6 +4,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # if pyenv is installed, load it
+# (this requires pyenv to have been installed using the automatic installer)
+# curl https://pyenv.run | bash
 if [ -d "$HOME/.pyenv" ]; then
   echo "Loading pyenv"
   export PYENV_ROOT="$HOME/.pyenv"
