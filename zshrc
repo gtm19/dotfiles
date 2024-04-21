@@ -88,3 +88,6 @@ fi
 
 # Add homebrew to path
 export PATH=$PATH:/opt/homebrew/bin
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"

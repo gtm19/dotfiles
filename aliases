@@ -12,8 +12,8 @@ gemwtf() {
 
 # generate random decimal between -1 and 1
 rand() {
-  min=-1
-  max=1
+  min=-0.75
+  max=0.75
   awk -v min=$min -v max=$max 'BEGIN{srand(); print min+rand()*(max-min)}' 
 }
 
