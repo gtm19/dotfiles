@@ -48,3 +48,6 @@ golem () {
   Rscript -e "if(!require(golem)) install.packages('golem')" \
           -e "golem::create_golem(path = '$1')"
 }
+
+# Alias for bat / batcat
+alias bat="batcat"
