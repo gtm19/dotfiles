@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # if pyenv is installed, load it
 # (this requires pyenv to have been installed using the automatic installer)
@@ -90,4 +90,4 @@ fi
 export PATH=$PATH:/opt/homebrew/bin
 
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
