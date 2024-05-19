@@ -74,5 +74,8 @@
     {
         "rubocop": true
     },
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontFamily": "Victor Mono,Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true
 }
