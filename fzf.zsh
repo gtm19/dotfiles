@@ -1,10 +1,7 @@
 # Setup fzf
 # ---------
-FZF_DIR=/home/gmaddock/.fzf
-
-if [[ ! "$PATH" == *$FZF_DIR/bin* ]]; then
-  PATH="${PATH:+${PATH}:}${FZF_DIR}/bin"
+if [[ ! "$PATH" == */Users/garethmaddock/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/Users/garethmaddock/.fzf/bin"
 fi
 
-source $FZF_DIR/shell/completion.zsh
-source $FZF_DIR/shell/key-bindings.zsh
+eval "$(fzf --zsh)"

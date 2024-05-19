@@ -87,7 +87,7 @@ if ls /mnt/wsl >> /dev/null 2>&1; then
 fi
 
 # Add homebrew to path
-export PATH=$PATH:/opt/homebrew/bin
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Set up fzf key bindings and fuzzy completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
