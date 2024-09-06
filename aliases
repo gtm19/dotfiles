@@ -1,6 +1,5 @@
 # Get External IP / Internet Speed
 alias myip="curl https://ipinfo.io/json" # or /ip for plain-text ip
-alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -"
 
 # Quickly serve the current directory as HTTP
 alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
@@ -14,7 +13,7 @@ gemwtf() {
 rand() {
   min=-0.75
   max=0.75
-  awk -v min=$min -v max=$max 'BEGIN{srand(); print min+rand()*(max-min)}' 
+  awk -v min=$min -v max=$max 'BEGIN{srand(); print min+rand()*(max-min)}'
 }
 
 # scans
@@ -51,3 +50,37 @@ golem () {
 
 # Alias for bat / batcat
 alias bat="batcat"
+
+# combine pdfs
+pdf_combine() {
+    # Check if a glob pattern is provided
+    if [ -z "$1" ]; then
+        echo "Usage: pdf_combine_and_footer '<glob-pattern>'"
+        echo "Example: pdf_combine_and_footer '*.pdf'"
+        return 1
+    fi
+
+    # Assign the glob pattern
+    local glob_pattern=$1
+
+    # Temporary directory for intermediate files
+    local tempdir=$(mktemp -d)
+    local output="output_combined.pdf"
+
+    # Get the list of PDF files matching the glob pattern
+    local pdf_files=($(ls $glob_pattern))
+
+    # Add footer to each file
+    for pdf_file in "${pdf_files[@]}"; do
+        local filename=$(basename "$pdf_file" .pdf)
+        pdfjam --outfile "$tempdir/${filename}_footer.pdf" --footer "${filename}" "$pdf_file"
+    done
+
+    # Combine PDFs with footers
+    pdftk "$tempdir"/*_footer.pdf cat output "$output"
+
+    # Cleanup temporary directory
+    rm -rf "$tempdir"
+
+    echo "Combined PDF with footers: $output"
+}
