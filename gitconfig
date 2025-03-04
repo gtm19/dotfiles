@@ -56,4 +56,5 @@
 	ff = only
   rebase = false
 [credential]
-	helper = cache
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+	useHttpPath = true

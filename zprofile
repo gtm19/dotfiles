@@ -14,5 +14,7 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
    eval `cat $HOME/.ssh/ssh-agent`
 fi
 
-# Add github key to ssh-agent
-ssh-add ~/.ssh/id_ed25519
+# Add github key to ssh-agent if it exists
+if [  -f ~/.ssh/id_ed25519 ]; then
+    ssh-add ~/.ssh/id_ed25519
+fi
